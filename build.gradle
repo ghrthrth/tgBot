@@ -19,4 +19,5 @@ test {
     useJUnitPlatform()
 }
 
-defaultTasks "clean", "build", "installApp"
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
