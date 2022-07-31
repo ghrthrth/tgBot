@@ -20,3 +20,10 @@ test {
 }
 
 task stage(dependsOn: ['clean', 'shadowJar'])
+
+task install(type: Copy) {
+    dependsOn subprojects*.tasks*.findByName('build').minus(null)
+    doLast {
+        println "exec install task"
+    }
+}
