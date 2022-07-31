@@ -19,3 +19,4 @@ test {
     useJUnitPlatform()
 }
 
+defaultTasks "clean", "build", "installApp"

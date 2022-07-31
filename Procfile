@@ -1,1 +1,1 @@
-web: java -Xms150M -jar target/thBot.jar
+web: java -jar -Dport=$PORT build/libs/my-springboot-fat.jar
