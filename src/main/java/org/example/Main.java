@@ -10,6 +10,13 @@ public class Main {
 // Register for updates
         bot.setUpdatesListener(updates -> {
             updates.forEach(update -> {
+                if (update.message().text().equals("/send")) {
+                    bot.execute(new SendMessage(update.message().chat().id(), "Люблю тебя!!!!!!!!"));
+                } else if (update.message().text().equals("/start!!")) {
+                    bot.execute(new SendMessage(update.message().chat().id(), "Что бы ты хотел от меня?"));
+                } else {
+                    bot.execute(new SendMessage(update.message().chat().id(), "Я тебя не понимаю!"));
+                }
                 updates.forEach(System.out::println);
             });
             return UpdatesListener.CONFIRMED_UPDATES_ALL;
