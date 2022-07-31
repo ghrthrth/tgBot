@@ -1,1 +1,1 @@
-web: java -jar -Dport=$PORT build/libs/my-springboot-fat.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/cheese-mvc-persistent-0.0.1-SNAPSHOT.jar
